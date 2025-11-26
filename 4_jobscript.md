@@ -1,3 +1,6 @@
+## Jobscript
+
+We use slurm as provisioned during the cluster deployment. Below is a sample example to verify and run simple jobscripts.
 
 ```
 ubuntu@super-ant-controller:~$ sinfo 
@@ -12,7 +15,6 @@ ubuntu@super-ant-controller:~$ squeue
 ubuntu@super-ant-controller:~$ 
 ```
 
-
 ```
 ubuntu@super-ant-controller:~$ ls /opt/oci-hpc/samples/gpu/*
 /opt/oci-hpc/samples/gpu/H100-topology-kubernetes.xml                        /opt/oci-hpc/samples/gpu/nccl_run_allreduce_srun.sbatch          /opt/oci-hpc/samples/gpu/qfabv1_nccl_run_allreduce.sbatch
@@ -26,7 +28,6 @@ ubuntu@super-ant-controller:~$ ls /opt/oci-hpc/samples/gpu/*
 /opt/oci-hpc/samples/gpu/nccl_run_allreduce_containers_with_ordering.sbatch  /opt/oci-hpc/samples/gpu/ping.sh                                 /opt/oci-hpc/samples/gpu/update_netmask.sh
 ubuntu@super-ant-controller:~$ 
 ```
-
 
 ```
 kaushik@super-ant-controller:/opt/oci-hpc/samples$ cat NCCL_readme 
@@ -102,9 +103,9 @@ Running /opt/oci-hpc/nccl-test/build/all_reduce_perf test on 2 nodes
 #  Rank 15 Group  0 Pid 287777 on   GPU-3841 device  7 [0xd8] NVIDIA H200
 NCCL version 2.27.5+cuda12.8
 #
-#                                                              out-of-place                       in-place          
+#                                                              out-of-place                       in-place        
 #       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
-#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)     
   1073741824     268435456     float     sum      -1   4396.8  244.21  457.90      0   4382.1  245.03  459.43      0
   2147483648     536870912     float     sum      -1   8538.8  251.50  471.56      0   8500.0  252.64  473.71      0
   4294967296    1073741824     float     sum      -1    16756  256.32  480.61      0    16759  256.28  480.53      0
@@ -114,4 +115,4 @@ NCCL version 2.27.5+cuda12.8
 # Avg bus bandwidth    : 476.572 
 #
 
- ```
+```

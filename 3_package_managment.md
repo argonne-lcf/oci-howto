@@ -91,9 +91,9 @@ ls -d /fss/kaushik/envs/*
 oci provides a much cleaner way for managing packages through odsc. It is a User-Facing Tool. The users directly interact with odsc commands (e.g., odsc conda publish, odsc job run, odsc model deploy). odsc wraps standard Conda functionality but adds critical OCI-specific logic for deployment accross instances and manages the environment creation/copying to your OCI tenancy. It acts as a configuration tool that tells the OCI platform which environment to use when it automatically provisions a new compute node to run your code at scale.
 It could go under https://github.com/oracle-quickstart/oci-hpc/tree/master/playbooks/roles so its available on all nodes.
 
-<img src="images/3_package/1.png" alt="description" width="40%">
+<img src="images/3_package/1.png" alt="description" width="75%">
 
-<img src="images/3_package/2.png" alt="description" width="40%">
+<img src="images/3_package/2.png" alt="description" width="75%">
 
 
 

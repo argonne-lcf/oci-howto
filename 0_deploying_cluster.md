@@ -8,82 +8,82 @@ We basically define the login nodes, controller nodes, monitoring nodes and GPU 
 
 Starting the stack in the multinode compartment
 
-<img src="images/0_deploying_cluster/1.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/1.png" alt="description" width="75%">
 
 Adding the terraform scripts zip
 
-<img src="images/0_deploying_cluster/2.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/2.png" alt="description" width="75%">
 
 Adding the admins laptop ssh keys
 
-<img src="images/0_deploying_cluster/3.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/3.png" alt="description" width="75%">
 
 Configuring the login node
 
-<img src="images/0_deploying_cluster/4.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/4.png" alt="description" width="75%">
 
 Configuring the monitoring node
 
-<img src="images/0_deploying_cluster/5.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/5.png" alt="description" width="75%">
 
 Configuring the filesystem NFS node
 
 All nodes have a common shared file system /config, /home and /fss and varying sizes of local SSDs Note the common shared file system is NFS and not lustre
 
-<img src="images/0_deploying_cluster/6.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/6.png" alt="description" width="75%">
 
 Configuring the local SSDs
 
-<img src="images/0_deploying_cluster/7.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/7.png" alt="description" width="75%">
 
 Configuring the network
-login, controller in public subnet and compute in private subnet
-ROCE V2
 
-<img src="images/0_deploying_cluster/8.png" alt="description" width="40%">
+login, controller in public subnet and compute in private subnet. The backend network, also known as cluster network, is a purpose built RDMA network over RoCEv2 that is completely isolated from non-RDMA traffic. 
+
+<img src="images/0_deploying_cluster/8.png" alt="description" width="75%">
 
 Configuring the slurm on the controller node
 
-<img src="images/0_deploying_cluster/9.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/9.png" alt="description" width="75%">
 
 health check runs every 5mins and at the start of the job when enabled
 
-<img src="images/0_deploying_cluster/10.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/10.png" alt="description" width="75%">
 
 Review, Run Deploy
 
-<img src="images/0_deploying_cluster/11.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/11.png" alt="description" width="75%">
 
 Verify the deployed NFS
 
-<img src="images/0_deploying_cluster/12.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/12.png" alt="description" width="75%">
 
 Verify the deployed networking at
 
-<img src="images/0_deploying_cluster/13.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/13.png" alt="description" width="75%">
 
 Verify the deployed instances
 
-<img src="images/0_deploying_cluster/14.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/14.png" alt="description" width="75%">
 
 Copy the IP to login
 
-<img src="images/0_deploying_cluster/15.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/15.png" alt="description" width="75%">
 
 Verify the cuda version deployed
 
-<img src="images/0_deploying_cluster/16.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/16.png" alt="description" width="75%">
 
 How to terminate the instances. can be rebooted using the mgmt commands on the controller as well.
 
-<img src="images/0_deploying_cluster/17.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/17.png" alt="description" width="75%">
 
 important mgmt commands
 
-<img src="images/0_deploying_cluster/18.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/18.png" alt="description" width="75%">
 
 Get status on instances - More on monitoring later.
 
-<img src="images/0_deploying_cluster/19.png" alt="description" width="40%">
+<img src="images/0_deploying_cluster/19.png" alt="description" width="75%">
 
 custom images can be built from https://github.com/oracle-quickstart/oci-hpc-images as well.

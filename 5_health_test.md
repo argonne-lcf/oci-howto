@@ -1,16 +1,20 @@
+## Health Tests
 
-
+Health check runs every 5mins and at the start of the job when enabled.
 
 ```
 ubuntu@GPU-4287:~$ ls /opt/oci-hpc/healthchecks/
 __pycache__  active_HC.sbatch  active_healthcheck.py  check_gpu_setup.py  gpu_bw_test.py  gpu_sdc_checker.py  multi_node_active_HC.sbatch  multi_node_active_healthcheck.py  rdma_link_flapping.py  shared_logging.py  xid_checker.py
-ubuntu@GPU-4287:~$ 
+
 ubuntu@GPU-4287:~$ cd /var/log/healthchecks/
+
 ubuntu@GPU-4287:/var/log/healthchecks$ ls
 active_HealthCheck  latest_active_healthcheck.log  latest_healthcheck.log
+
 ubuntu@GPU-4287:/var/log/healthchecks$ cat latest_active_healthcheck.log 
 Started GPU active healthcheck at: 2025-11-26-071550
 Node details: GPU-4287 - BM Instance: 2437XLG0E9 - ocid1.instance.oc1.us-sanjose-1.anzwuljrhhkgvpyc4z7svanlv6q2da2nmkdadn6plbxfbolfl3tqhmqg62la - BM.GPU.H200.8
+
 ubuntu@GPU-4287:/var/log/healthchecks$ cat latest_healthcheck.log 
 Started GPU host setup check at: 2025-11-26-071542
 Node details: GPU-4287 - BM Instance: 2437XLG0E9 - BM.GPU.H200.8
@@ -43,3 +47,5 @@ ubuntu@GPU-4287:/var/log/healthchecks/active_HealthCheck$ cat  active_HealthChec
 
 
 ```
+
+mgmt nodes get compute-node also provides more details on the healthtests.

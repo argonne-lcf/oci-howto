@@ -2,7 +2,7 @@
 
 Once the PI has added the user to Identity console in OCI, the user will recieve an email to activate their account. You also need to download the oracle mobile authenticator app and add the QR code during the account activation.
 
-<img src="images/1_login/identity_profiles.png" alt="description" width="40%">
+<img src="images/1_login/identity_profiles.png" alt="description" width="75%">
 
 Once your account is activated, you can login to [https://cloud.oracle.com/identity/domains/my-profile?tenant=ArgonneAI&amp;domain=Default&amp;region=us-sanjose-1](https://cloud.oracle.com/identity/domains/my-profile?tenant=ArgonneAI&domain=Default&region=us-sanjose-1)
 
@@ -10,7 +10,7 @@ Once your account is activated, you can login to [https://cloud.oracle.com/ident
 
 You can then verify the current instances under the Argonne-AI tenant.
 
-<img src="images/1_login/instances.png" alt="description" width="40%">
+<img src="images/1_login/instances.png" alt="description" width="75%">
 
 Note, this is a preconfigured instances by the admin. We can deploy any cluster instance configuration using the terraform scripts and https://github.com/oracle-quickstart/oci-hpc . More on this later.
 
