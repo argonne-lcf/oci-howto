@@ -41,9 +41,11 @@ MASTER_PORT=29500   # or any free port
 
 TORCHFT_LIGHTHOUSE=${TORCHFT_LIGHTHOUSE:-"http://localhost:29510"}
 
-dcgmi profile --pause
-srun torchrun --nnodes=2 --nproc_per_node=${NGPU} --rdzv_backend c10d --rdzv_endpoint "$head_node_ip:29500" -m torchtitan.train --job.config_file ${CONFIG_FILE} "$@"
-dcgmi profile --resume
+PYTORCH_ALLOC_CONF="expandable_segments:True" \
+TORCHFT_LIGHTHOUSE=${TORCHFT_LIGHTHOUSE} \
+torchrun --nproc_per_node=${NGPU} --rdzv_backend c10d --rdzv_endpoint="${MASTER_ADDR}:${MASTER_PORT}" \
+--local-ranks-filter ${LOG_RANK} --role rank --tee 3 \
+-m ${TRAIN_FILE} --job.config_file ${CONFIG_FILE} "$@"
 ```
 
 Output
