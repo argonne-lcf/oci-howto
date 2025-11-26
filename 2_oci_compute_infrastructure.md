@@ -1,4 +1,4 @@
-### installing clush on login node.
+### Installing clush on login node.
 
 Initially OCI did not have `clush` or `pdsh` on the login node, so i installed it. These help facilitate various cluster-wide user-task management. 
 
@@ -38,9 +38,14 @@ kaushik@super-ant-login:~$ clush  -w 172.16.48.190,172.16.0.225,172.16.0.59,172.
 172.16.48.244: GPU-4341
 ```
 
-All nodes have a common shared file system /config, /home and /fss and varying sizes of local SSDs.
+## Storage 
 
-Note the common shared file system is NFS and not lustre
+All nodes have a common shared file system /config, /home and /fss and varying sizes of local SSDs.
+/home and /fss can be used to stage data. 
+
+You can copy data to node-local SSDs as needed too. This is at /mnt/localdisk
+
+Note the common shared file system, /home and /fss are NFS and not lustre
 
 ```
 kaushik@super-ant-login:~$ clush  -w 172.16.48.190,172.16.0.225,172.16.0.59,172.16.48.244 'df -h' 
@@ -116,4 +121,4 @@ ubuntu@GPU-4287:~$
 It is better to copy the datasets from the NFS to the local SSDs for performance. 
 NFS is roughly 8GiB/s peak. 
 
-You can also start services like vector databases through ansible under image oci-hpc playbooks or under /config/playbooks/roles/custom/tasks/
+Note: You can also start services like vector databases through ansible under image oci-hpc playbooks or under /config/playbooks/roles/custom/tasks/
