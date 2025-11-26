@@ -404,7 +404,9 @@ testnsn@GPU-4341:~$ nvidia-smi
 ---
 
 ## 6. Pretraining Llama 3.1 8B with Slurm
-
+> ⚠️ **Broken**
+> Training in this manner is currently broken due to conflicts with NCCL and the CUMEM path. Use the `torchtitan` approach instead and wait for future debugging.
+> 
 Directory layout example:
 
 * `/fss/models/meta-llama/Llama-3.1-8B` – local Llama 3.1 8B model/config
@@ -422,10 +424,6 @@ Directory layout example:
 # One task per GPU
 #SBATCH --ntasks-per-node=8
 #SBATCH --gpus-per-task=1
-
-# # 14 physical cores per GPU <-- FIXME not working
-# #SBATCH --cpus-per-task=14
-# #SBATCH --hint=nomultithread          # use 1 hw thread / core
 
 #SBATCH --time=01:00:00
 #SBATCH --partition=compute
