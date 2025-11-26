@@ -1,6 +1,6 @@
 ### installing clush on login node.
 
-Initially OCI did not have clush or pdsh on the login node, so i installed it. 
+Initially OCI did not have `clush` or `pdsh` on the login node, so i installed it. These help facilitate various cluster-wide user-task management. 
 
 ```
 ubuntu@super-ant-login:~$ sudo apt-get install -y clustershell
