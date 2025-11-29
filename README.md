@@ -1,5 +1,5 @@
 # oci-howto
-Getting started on OCI with AI workloads
+## Getting started on OCI for AI workloads
 
 [Nathan's notes on Getting Started on OCI with Slurm, Pre-training and Inference](#11_nathans-notes.md)
 
