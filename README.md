@@ -19,4 +19,5 @@
 [Deploying Clusters](0_deploying_cluster.md)
 [Clush and Cluster details](2_oci_compute_infrastructure.md)
 
-
+## Known Issues
+Known issue with the latest NCCL on OCI. 
